@@ -1,7 +1,17 @@
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
+import LoginRegister from "./Components/LoginRegister";
+import Feedback from "./Components/Feedback";
+
 const App = () => {
     return (
         <div className="App">
-            <h2>Hello</h2>
+            <Router>
+                <Routes>
+                    <Route path="authenticate" element={<LoginRegister />} />
+                    <Route path="/" element={<Feedback />} />
+                </Routes>
+            </Router>
         </div>
     )
 }
