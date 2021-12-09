@@ -1,0 +1,44 @@
+.LoginRegister{
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginRegister .container{
+    min-height: 40%;
+    width:25%;
+    padding: 1rem 2rem;
+    background-color: hsl(0, 0%, 96%);
+    border-radius: 6px;
+    color: #333;
+    border: 1px solid hsl(0, 0%, 93%);
+    box-shadow: 6px 6px 10px hsl(0, 0%, 88%);
+}
+
+.LoginRegister .container h2{
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.LoginRegister .container button.btn {
+    margin: 0.5rem 0;
+    border:none;
+    outline: 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.LoginRegister .container p{
+    margin: 0.75rem 0;
+}
+
+.LoginRegister .container p span {
+    cursor: pointer;
+    font-weight: 500;
+}

@@ -1,0 +1,32 @@
+.form-group{
+    margin: 0.75rem 0;
+}
+
+.form-group .input-details {    
+    position:relative;
+}
+
+.form-group .input-details input {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.35rem 1rem 0.35rem 2rem;
+    border: 1px solid #333;
+    outline: 0;
+    border-radius: 3px;
+}
+
+.form-group .input-details .icon {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+}
+
+.form-group .input-details .eye{
+    cursor: pointer;
+} 
+
+.form-group .input-details label{
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}

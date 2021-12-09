@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FaUser, FaEyeSlash, FaEye} from 'react-icons/fa';
-
+import "./Input.css"
 function Input({ properties, error, icon, label }) {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -17,14 +17,14 @@ function Input({ properties, error, icon, label }) {
     return (
         <div className={error ? "form-group error": "form-group"}>
             <div className="input-details">
-                <input {...properties} type={type} autoComplete="off" />
                 <label htmlFor={properties.name}>{label}</label>
+                <input {...properties} type={type} autoComplete="off" />
                 {
                     icon === "user" ? 
-                        <FaUser /> :
+                        <FaUser className="icon" /> :
                         passwordVisible ? 
-                            <FaEye onClick={changeHandler} /> : 
-                            <FaEyeSlash  onClick={changeHandler}  />
+                            <FaEye className="icon eye" onClick={changeHandler} /> : 
+                            <FaEyeSlash className="icon eye" onClick={changeHandler}  />
                 }
             </div>
             {error && <span className="error">{error}</span>}
