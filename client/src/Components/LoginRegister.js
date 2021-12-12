@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const LoginRegister = () => {
-
     const [login, setLogin] = useState(true);
     const [formDetails, setFormDetails] = useState(initialState);
     const [error, setError] = useState(initialState);
@@ -17,9 +16,36 @@ const LoginRegister = () => {
         setFormDetails({...formDetails, [e.target.name]: e.target.value});
     };
 
+    
+    
     const submitHandler = (e) => {
-        console.log(formDetails);
+        let URL = "http://localhost:8080/user/signin";
+        if(!login) URL = "http://localhost:8080/user/signup";
+
+        let status;
+        fetch(URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDetails),
+          })
+            .then((res) => {
+              status = res.status;
+              return res.json();
+            })
+            .then((data) => {
+              if (status == 200 || status == 201) {
+                // store token and redirect to home page
+              } else {
+                // console.log(data);
+                // const res = data.data;
+                // setError(res);
+              }
+            })
+            .catch((err) => console.log(err));
     }
+    
 
     return (
         <div className="LoginRegister">
@@ -52,7 +78,7 @@ const LoginRegister = () => {
                             className: formDetails.password ? "valid": ""
                         }}
                     />
-                    <button className="btn" onClick={submitHandler}>{login ? "Login" : "Register"}</button>
+                    <button className="btn" onClick={(e) => submitHandler(e, login)}>{login ? "Login" : "Register"}</button>
                 </div>
                 {
                     login ? 

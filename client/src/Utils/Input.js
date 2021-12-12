@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {FaUser, FaEyeSlash, FaEye} from 'react-icons/fa';
 import "./Input.css"
+
 function Input({ properties, error, icon, label }) {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
