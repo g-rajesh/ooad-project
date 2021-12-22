@@ -35,12 +35,17 @@ const LoginRegister = () => {
               return res.json();
             })
             .then((data) => {
+                console.log(data);
               if (status == 200 || status == 201) {
                 // store token and redirect to home page
+                window.location.href = "http://localhost:3000/";
+                localStorage.setItem("user",data.body.user);
+                localStorage.setItem("token",data.body.token);
+                setError(initialState);
               } else {
                 // console.log(data);
-                // const res = data.data;
-                // setError(res);
+                const res = data.data;
+                setError(res);
               }
             })
             .catch((err) => console.log(err));
@@ -82,8 +87,8 @@ const LoginRegister = () => {
                 </div>
                 {
                     login ? 
-                        <p>New user? <span onClick={() => setLogin(false)}>Register</span></p> : 
-                        <p onClick={() => setLogin(true)}>Already a user? <span>Login</span></p>
+                        <p>New user? <span onClick={() =>{setError(initialState); setLogin(false)}}>Register</span></p> : 
+                        <p onClick={() => {setError(initialState);setLogin(true)}}>Already a user? <span>Login</span></p>
                 }
             </div>
         </div>

@@ -14,7 +14,7 @@ exports.signin = async (req, res, next) => {
         if(password.trim().length == 0) {
             emptyErr.error.password = "Password is required";
         }
-        throw emptyErr;
+        next(emptyErr);
     }
 
     if(!email.includes("@")){
@@ -22,7 +22,7 @@ exports.signin = async (req, res, next) => {
         invalidEmailErr.error = {
             email:"Email is invalid"
         };
-        throw invalidEmailErr;
+        next(invalidEmailErr);
     }
 
     let ourUser;
@@ -43,7 +43,7 @@ exports.signin = async (req, res, next) => {
         if(!isEqual){
             const signIpErr = new Error("Password doesn't match!");
             signIpErr.error = {
-                email:"Password doesn't match!"
+                password:"Password doesn't match!"
             };
             throw signIpErr;        
         }
@@ -81,7 +81,7 @@ exports.signup = (req,res,next) => {
         if(password.trim().length == 0) {
             emptyErr.error.password = "Password is required";
         }
-        throw emptyErr;
+        next(emptyErr);
     }
 
     if(!email.includes("@")){
@@ -89,7 +89,7 @@ exports.signup = (req,res,next) => {
         invalidEmailErr.error = {
             email:"Email is invalid"
         };
-        throw invalidEmailErr;
+        next(invalidEmailErr);
     }
     
     User.findOne({ email })

@@ -30,3 +30,9 @@
     display: block;
     margin-bottom: 0.5rem;
 }
+
+.form-group span.error {
+    font-size: 0.75rem;
+    color: red;
+    margin: 0.5rem 0;
+}

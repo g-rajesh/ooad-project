@@ -1,0 +1,29 @@
+.feedbackContainer {
+    padding: 2rem;
+}
+
+.feedbackContainer h1 {
+    color: #333;
+}
+
+.feedbackContainer .feedback-list{
+    margin: 1rem 0;
+    list-style: none;
+}
+
+.feedbackContainer .feedback-item{
+    margin: 0.75rem 0;
+    background: #f2f2f2;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.feedbackContainer .feedback-item h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.feedbackContainer .feedback-item p {
+    font-size: 0.95rem;
+}
