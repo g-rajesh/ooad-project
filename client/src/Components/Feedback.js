@@ -26,14 +26,24 @@ const feedbacks = [
     
 ]
 const Feedback = () => {
+
+    const logoutHandler = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href = "http://localhost:3000/authenticate";
+    }
+
     return (
         <div className="feedbackContainer">
-            <h1>User's Feedback</h1>
+            <div className="f">
+                <h1>User's Feedback</h1>
+                <button className="logout" onClick={logoutHandler}>Logout</button>
+            </div>
             <div>
                 <ul className="feedback-list">
                     {
                     feedbacks.map(feedback => {
-                        return <li className="feedback-item">
+                        return <li key={feedback.userId} className="feedback-item">
                             <h2><span><FaUser className="icon" /></span>&nbsp;&nbsp;<span>{feedback.userName}</span></h2>
                             <p>{feedback.feedback}</p>
                         </li>

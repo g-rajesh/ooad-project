@@ -6,6 +6,21 @@
     color: #333;
 }
 
+.feedbackContainer .f {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedbackContainer .f button {
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+    outline: 0;
+    cursor: pointer;
+}
+
 .feedbackContainer .feedback-list{
     margin: 1rem 0;
     list-style: none;

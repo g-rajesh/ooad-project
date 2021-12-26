@@ -39,7 +39,7 @@ const LoginRegister = () => {
               if (status == 200 || status == 201) {
                 // store token and redirect to home page
                 window.location.href = "http://localhost:3000/";
-                localStorage.setItem("user",data.body.user);
+                localStorage.setItem("user",data.body.username);
                 localStorage.setItem("token",data.body.token);
                 setError(initialState);
               } else {
